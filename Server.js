@@ -138,7 +138,9 @@ io.on("connection", (socket) => {
 });
 
 // ✅ Server start করুন
-const PORT = process.env.PORT || 3002;
+// const PORT = process.env.PORT || 3002;
+// ✅ For Render deployment compatibility
+const PORT = parseInt(process.env.PORT) || 3002;
 server.listen(PORT, '0.0.0.0', () => {
     console.log(`🚀 Socket Gateway running on port ${PORT}`);
     console.log(`🔗 Local: http://localhost:${PORT}`);
